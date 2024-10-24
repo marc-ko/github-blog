@@ -1,0 +1,65 @@
+---
+title: AJR
+
+---
+有晚好頹有次Music app random play左首歌俾我 <br>
+The first reaction 係首歌一般upbeat <br>
+但係覺得啲lyrics好鬼怪		
+第一句係度話"Hello Hello"		
+	
+> Hello, hello		
+> I'm not where I'm supposed to be			
+> I hope that you're missing me		
+> Cause it makes me feel young
+
+當時好對住dse卷 numb到傻		
+歌詞每次講Sober up 同 Wanna feel something again	 
+內心都會俾佢hit 左一下
+and as the weak man I cried that night
+	
+喺慢慢explore 佢其他album 發現... 			
+呢隊band 唔係講情情愛愛唔係講upbeat話自己幾勁		
+多數係講述緊人生經歷同埋社會令我地變化...		
+用自述用朋友嘅角度同你發生共鳴
+
+<hr>
+過左一陣我就超鐘意呢隊band		
+每次我發生一啲不如意...感到絕望嘅時候 	
+就慢慢開始loop 佢地啲album
+
+當初OK Orchestra 出黎嘅時候		
+第一首hit me deepest 係 Humpty Dumpty		
+> Humpty Dumpty 係一個英國童謠人物，中文叫矮胖子 
+> 喺故事通常被形容為一個矮小笨拙嘅人				
+
+用Humpty Dumpty 黎形容我地平時嘅笨拙		
+好驚發現自己嘅錯誤		
+一旦發現左就同人落差太大就感到瞬間寂寞		
+喺唔同人面前隱藏自己		
+唔想人可憐自己		
+面對住寸不難行嘅難關 just screw it 笑住咁一往無前		
+
+### 每一個album 入面每一part都describe人生嘅不同難關		
+* 童年	
+* 成長	
+* 迷惘	
+* 想法	
+
+
+特別嘅曲風加上獨特嘅共鳴方式		
+如果你睇不妨可以試下聽下AJR		
+可能發現到你嘅理解方式		
+呢個係我自己嘅寶藏～.～
+就寫喺呢個無人睇嘅blog度就可以了
+
+好多謝AJR支撐住我嘅唔同hardship	
+
+
+
+But I'm too fucking young to feel so fucking up
+So I'll try it and I'll try it and I'll try
+And I'm not dead yet so I guess I'll be alright	
+
+
+
+	

@@ -103,6 +103,48 @@ body=(0.004, -0.013, -9.153) | Dist: 9.15m
 
 - **`scripts/enable_mavlink_streams.sh`**：手動對 FCU 送同一組 `SET_MESSAGE_INTERVAL`（需在 MAVROS 已連線時執行）。
 - **注意**：若腳本使用 **`set -u`**（nounset）又去 **`source /opt/ros/humble/setup.bash`**，可能觸發 `AMENT_TRACE_SETUP_FILES: unbound variable`；目前腳本已改為 **`set -eo pipefail`**（不使用 `-u`）以避免與 ROS 安裝腳本互斥。
+```bash
+#!/usr/bin/env bash
+# One-shot: request ArduPilot to emit position/IMU/attitude (SR0_* default 0 in AP).
+# Uses MAV_CMD_SET_MESSAGE_INTERVAL (511). Run after MAVROS is up:
+#   source install/setup.bash && ./scripts/enable_mavlink_streams.sh
+#
+# Optional: MAVROS_PREFIX=/mavros (default)
+
+set -eo pipefail
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+WS_ROOT="${ARDU_WS:-$(cd "$SCRIPT_DIR/.." && pwd)}"
+
+if [[ -f /opt/ros/humble/setup.bash ]]; then
+  # shellcheck source=/dev/null
+  source /opt/ros/humble/setup.bash
+fi
+if [[ -f "$WS_ROOT/install/setup.bash" ]]; then
+  # shellcheck source=/dev/null
+  source "$WS_ROOT/install/setup.bash"
+fi
+
+MP="${MAVROS_PREFIX:-/mavros}"
+MP="${MP%/}"
+INTERVAL_US="${APM_MAVLINK_INTERVAL_US:-100000}"
+
+call_interval() {
+  local id="$1"
+  local name="$2"
+  ros2 service call "${MP}/cmd/command" mavros_msgs/srv/CommandLong \
+    "{broadcast: false, command: 511, confirmation: 0, param1: ${id}.0, param2: ${INTERVAL_US}.0, param3: 0.0, param4: 0.0, param5: 0.0, param6: 0.0, param7: 0.0}" \
+    | tail -1
+  echo "  SET_MESSAGE_INTERVAL id=${id} (${name}) interval_us=${INTERVAL_US}"
+}
+
+echo "Requesting MAVLink message intervals on ${MP}/cmd/command ..."
+call_interval 33 GLOBAL_POSITION_INT
+call_interval 32 LOCAL_POSITION_NED
+call_interval 30 ATTITUDE
+call_interval 27 RAW_IMU
+echo "Done. Check: ros2 topic hz ${MP}/global_position/rel_alt"
+
+```
 
 ### 4.3 替代／補強：調高 `SR0_*`（需理解參數與重啟行為）
 
